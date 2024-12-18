@@ -18,7 +18,7 @@ export async function getChatGPTResponse(
     );
 
     // Hugging Face typically returns an array of generated text
-    return response.data[0]?.generated_text || 'No response generated';
+    return (response.data[0]?.generated_text).substring(prompt?.length || 0).trim() || 'No response generated';
   } catch (error: any) {
     if (axios.isAxiosError(error)) {
       throw new Error(
