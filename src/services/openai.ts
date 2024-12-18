@@ -1,22 +1,32 @@
-import OpenAI from 'openai';
+import axios from 'axios';
 
 export async function getChatGPTResponse(
-  apiKey: string,
-  prompt: string
+    apiKey: string,
+    prompt: string,
+    model: string = 'Qwen/QwQ-32B-Preview'
 ): Promise<string> {
-  const openai = new OpenAI({
-    apiKey,
-    dangerouslyAllowBrowser: true,
-  });
-
   try {
-    const response = await openai.chat.completions.create({
-      model: 'gpt-3.5-turbo',
-      messages: [{ role: 'user', content: prompt }],
-    });
+    const response = await axios.post(
+        'https://api-inference.huggingface.co/models/' + model,
+        { inputs: prompt },
+        {
+          headers: {
+            'Authorization': `Bearer ${apiKey}`,
+            'Content-Type': 'application/json'
+          }
+        }
+    );
 
-    return response.choices[0]?.message?.content || 'No response generated';
+    // Hugging Face typically returns an array of generated text
+    return response.data[0]?.generated_text || 'No response generated';
   } catch (error: any) {
-    throw new Error(error?.message || 'Failed to get response from ChatGPT');
+    if (axios.isAxiosError(error)) {
+      throw new Error(
+          error.response?.data?.error ||
+          error.message ||
+          'Failed to get response from Hugging Face'
+      );
+    }
+    throw new Error('Unexpected error calling Hugging Face API');
   }
 }

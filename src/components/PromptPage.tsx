@@ -25,7 +25,7 @@ export const PromptPage: React.FC = () => {
     return null;
   }
 
-  const finalPrompt = `${selectedPrefix.text} ${promptText}`;
+  const finalPrompt = `${selectedPrefix.text} '${promptText}'`;
 
   const handleSubmit = async () => {
     if (!apiKey) {
