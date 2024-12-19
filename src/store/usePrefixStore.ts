@@ -27,12 +27,12 @@ export const usePrefixStore = create<PrefixStore>((set) => ({
   addPrefix: (prefix) =>
     set((state) => ({
       prefixes: [
-        ...state.prefixes,
         {
           ...prefix,
           id: crypto.randomUUID(),
           usageCount: 0,
         },
+        ...state.prefixes,
       ],
     })),
 

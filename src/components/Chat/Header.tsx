@@ -1,7 +1,9 @@
 import React from 'react';
-import { ArrowLeft, Moon, Sun, Settings } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { usePrefixStore } from '../../store/usePrefixStore';
 import { SettingsMenu } from '../SettingsMenu';
+import { DarkModeToggle } from '../DarkModeToggle';
+import { UserAvatar } from '../UserAvatar';
 
 interface HeaderProps {
   onBack: () => void;
@@ -10,8 +12,6 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ onBack, prefixText, prefixColor }) => {
-  const { isDarkMode, toggleDarkMode } = usePrefixStore();
-
   return (
     <div className="sticky top-0 z-10 backdrop-blur-lg bg-white/80 dark:bg-gray-800/80 border-b dark:border-gray-700">
       <div className="max-w-3xl mx-auto px-4 py-3">
@@ -39,13 +39,9 @@ export const Header: React.FC<HeaderProps> = ({ onBack, prefixText, prefixColor 
             </div>
           </div>
           
-          <div className="flex items-center gap-2">
-            <button
-              onClick={toggleDarkMode}
-              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white"
-            >
-              {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
+          <div className="flex items-center gap-4">
+            <UserAvatar />
+            <DarkModeToggle />
             <SettingsMenu />
           </div>
         </div>
