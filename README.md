@@ -1,52 +1,116 @@
-# Gestionnaire de Préfixes pour ChatGPT
+# Prefix Manager
 
-## Description
-Cette application a pour objectif de simplifier l'utilisation des requêtes fréquemment utilisées avec ChatGPT en gérant une liste de préfixes. Ces préfixes permettent d'injecter automatiquement des instructions courantes dans une requête, telles que :
+A modern web application for managing and using custom prefixes with ChatGPT conversations.
 
-- **Reformuler cette phrase**
-- **Traduire cette phrase**
-- **Refactoriser ce code**
+![Dark Mode Support](https://img.shields.io/badge/dark%20mode-supported-success)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=flat&logo=react&logoColor=%2361DAFB)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=flat&logo=typescript&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=flat&logo=tailwind-css&logoColor=white)
 
-L'application vise à améliorer l'efficacité et la convivialité pour les utilisateurs réguliers de ChatGPT.
+## ✨ Features
 
-## Fonctionnalités Principales
+- 🔐 **User Authentication**
+    - Local authentication system
+    - Secure password handling
+    - User profile management
 
-### Gestion des Préfixes
-- **Ajout de Préfixe** : Ajoutez un préfixe personnalisé.
-- **Recherche de Préfixe** : Recherchez rapidement un préfixe dans la liste.
-- **Suppression de Préfixe** : Supprimez un préfixe existant.
-- **Injection Automatique** : Sélectionnez un préfixe pour l'insérer automatiquement dans une requête.
+- 🎨 **Modern UI/UX**
+    - Clean and intuitive interface
+    - Responsive design
+    - Dark mode support
+    - Smooth animations and transitions
 
-### Organisation et Personnalisation
-- **Glisser-Déposer** : Réorganisez facilement les préfixes grâce à une fonctionnalité de drag-and-drop.
-- **Codage Couleur** : Attribuez des couleurs ou des icônes aux préfixes pour une meilleure lisibilité.
-- **Aperçu de la Demande** : Affichez un aperçu complet de la requête avant de l'envoyer.
+- 📝 **Prefix Management**
+    - Create custom prefixes
+    - Categorize prefixes
+    - Color-code prefixes
+    - Drag-and-drop reordering
+    - Usage tracking
 
-### Menu Avancé de Gestion des Préfixes
-- **Catégorisation** : Organisez les préfixes par catégories (ex. : langue, développement, traduction, etc.).
-- **Personnalisation Avancée** : Configurez des préfixes avec des espaces réservés ou des variables (ex. : "Traduire cette phrase en {langue}").
-- **Historique d'Utilisation** : Conservez un historique des préfixes les plus fréquemment utilisés pour un accès rapide.
+- 💬 **ChatGPT Integration**
+    - Direct conversations with ChatGPT
+    - Custom prefix prepending
+    - Real-time typewriter effect
+    - Message history
+    - Copy message functionality
 
-### Accessibilité et Confort
-- **Mode Sombre** : Activez un mode Dark pour un meilleur confort visuel.
+- 🔍 **Search & Filter**
+    - Quick prefix search
+    - Category filtering
+    - Sort by usage
 
-## Objectifs
-Ce projet est destiné à :
-- Améliorer la productivité des utilisateurs de ChatGPT.
-- Simplifier la gestion et l'utilisation des requêtes courantes.
-- Fournir une interface intuitive et personnalisable.
+## 🚀 Getting Started
 
-## Installation et Utilisation
-Les étapes détaillées pour l'installation et l'utilisation seront incluses dans une future version.
+1. **Clone and Install**
+   ```bash
+   git clone git@github.com:DanihStephane/prefix-manager-chatGPT.git
+   cd prefix-manager-chatGPT
+   npm install
+   ```
 
----
+2. **Set up Environment Variables**
+   ```env
+   VITE_OPENAI_API_KEY=your_api_key_here
+   ```
 
-### Contributions
-Les contributions sont les bienvenues ! Si vous avez des idées ou des suggestions, n'hésitez pas à ouvrir une issue ou soumettre une pull request.
+3. **Run Development Server**
+   ```bash
+   npm run dev
+   ```
 
-### Licence
-Ce projet est sous licence [Nom de la Licence]. Veuillez consulter le fichier `LICENSE` pour plus de détails.
+## 🛠️ Tech Stack
 
----
+- **Frontend Framework**: React with TypeScript
+- **Styling**: TailwindCSS
+- **State Management**: Zustand
+- **Routing**: React Router
+- **Icons**: Lucide React
+- **Drag & Drop**: DND Kit
+- **Build Tool**: Vite
 
-Nous espérons que cette application vous sera utile pour gérer vos interactions avec ChatGPT de manière efficace et agréable !
+## 🏗️ Project Structure
+
+```
+src/
+├── components/         # Reusable UI components
+│   ├── Auth/          # Authentication related components
+│   ├── Chat/          # Chat interface components
+│   └── ...
+├── pages/             # Page components
+├── store/             # Zustand store definitions
+├── types/             # TypeScript type definitions
+└── services/          # API and service integrations
+```
+
+## 🎯 Core Features Explained
+
+### Authentication System
+- Local storage based authentication
+- Secure password handling
+- Protected routes
+- User session management
+
+### Prefix Management
+- Create, edit, and delete prefixes
+- Custom colors and categories
+- Usage tracking and statistics
+- Drag-and-drop reordering
+
+### Chat Interface
+- Real-time conversation with ChatGPT
+- Message history
+- Typewriter effect for responses
+- Copy message functionality
+
+### Theme Support
+- System-based theme detection
+- Manual theme toggle
+- Persistent theme preference
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
