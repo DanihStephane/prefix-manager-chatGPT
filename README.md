@@ -50,7 +50,7 @@ A modern web application for managing and using custom prefixes with ChatGPT con
 
 2. **Set up Environment Variables**
    ```env
-   VITE_OPENAI_API_KEY=your_api_key_here
+   ![img.png](img.png)
    ```
 
 3. **Run Development Server**
