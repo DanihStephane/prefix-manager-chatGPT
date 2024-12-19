@@ -49,11 +49,11 @@ A modern web application for managing and using custom prefixes with ChatGPT con
    ```
 
 2. **Set up Environment Variables**
-   ```env
-   ![img.png](img.png)
-   ```
 
-3. **Run Development Server**
+   
+   ![img.png](img.png)
+
+4. **Run Development Server**
    ```bash
    npm run dev
    ```
