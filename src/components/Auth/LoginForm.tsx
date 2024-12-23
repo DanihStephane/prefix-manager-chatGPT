@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuthStore } from '../../store/useAuthStore';
+import { GoogleLoginButton } from './GoogleLoginButton';
 
 export const LoginForm: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -63,6 +64,17 @@ export const LoginForm: React.FC = () => {
           Sign in
         </button>
       </div>
+
+      <div className="relative">
+        <div className="absolute inset-0 flex items-center">
+          <div className="w-full border-t border-gray-300 dark:border-gray-600" />
+        </div>
+        <div className="relative flex justify-center text-sm">
+          <span className="px-2 bg-white dark:bg-gray-800 text-gray-500">Or continue with</span>
+        </div>
+      </div>
+
+      <GoogleLoginButton />
 
       <div className="text-sm text-center">
         <Link
